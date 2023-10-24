@@ -1,4 +1,7 @@
+import 'package:atom_bank_app_ui/pages/finance_page.dart';
 import 'package:atom_bank_app_ui/pages/home_page.dart';
+import 'package:atom_bank_app_ui/pages/logo_page.dart';
+import 'package:atom_bank_app_ui/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const LogoPage(),
+      routes: {
+        '/homePage': (context) => const HomePage(),
+        '/financePage': (context) => const FinancePage(),
+        '/walletPage': (context) => const WalletPage(),
+        '/profilePage': (context) => const FinancePage(),
+      },
     );
   }
 }
