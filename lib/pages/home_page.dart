@@ -1,7 +1,8 @@
 import 'package:atom_bank_app_ui/components/bottom_navbar.dart';
-import 'package:atom_bank_app_ui/components/label_button.dart';
-import 'package:atom_bank_app_ui/components/product_column.dart';
-import 'package:atom_bank_app_ui/util/card_add_button.dart';
+import 'package:atom_bank_app_ui/pages/finance_page.dart';
+import 'package:atom_bank_app_ui/pages/mainHome_page.dart';
+import 'package:atom_bank_app_ui/pages/profile_page.dart';
+import 'package:atom_bank_app_ui/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,73 +13,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+//selected index to control the bottom nav bar
+  int _selectedIndex = 0;
+
+//method updates index when user taps on bottom nav bar
+  void navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+//Pages to display
+  final List<Widget> _pages = [
+    //homepage
+    const MainHomePage(),
+
+    //financepage
+    const FinancePage(),
+
+//walletpage
+    const WalletPage(),
+
+//profilepage
+    const ProfilePage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
-        elevation: 0,
-        title: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Welcome Back',
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 18,
-              ),
-            ),
-            Text(
-              'Chukwuemeka',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        ),
-        actions: const [
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/avatar.jpeg'),
-            radius: 35,
-          ),
-        ],
-        backgroundColor: Colors.transparent,
+      bottomNavigationBar: CustomBottomNavBar(
+        onTabChange: (index) => navigateBottomBar(index),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset(
-                  'assets/images/atmcard.png',
-                  height: 180,
-                ),
-                const CardAddButton()
-              ],
-            ),
-            const SizedBox(height: 15),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                LabelButton(),
-                Text(
-                  'Recent Transaction',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-                ProductColumn()
-              ],
-            )
-          ],
-        ),
-      ),
-      bottomNavigationBar: const CustomBottomNavBar(),
+      body: _pages[_selectedIndex],
     );
   }
 }

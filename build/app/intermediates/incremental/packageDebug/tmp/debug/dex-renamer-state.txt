@@ -1,4 +1,0 @@
-#Mon Oct 09 17:13:49 WAT 2023
-base.0=/Users/emeka/Desktop/projects/atom_bank_app_ui/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

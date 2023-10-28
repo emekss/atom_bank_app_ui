@@ -1,5 +1,4 @@
 import 'package:atom_bank_app_ui/components/balance_column.dart';
-import 'package:atom_bank_app_ui/components/bottom_navbar.dart';
 import 'package:atom_bank_app_ui/components/finance_column.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +33,6 @@ class _FinancePageState extends State<FinancePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

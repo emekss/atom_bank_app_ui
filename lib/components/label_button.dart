@@ -1,4 +1,3 @@
-import 'package:atom_bank_app_ui/util/label_list.dart';
 import 'package:flutter/material.dart';
 
 class LabelButton extends StatelessWidget {
@@ -8,23 +7,49 @@ class LabelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        scrollDirection: Axis.horizontal,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/sendMoneyPage');
+            },
             child: Column(
               children: [
-                Image.asset(items[index]['image']),
-                Text(items[index]['title'])
+                Image.asset('assets/images/send.png'),
+                const Text('Send',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
-          );
-        },
+          ),
+          Column(
+            children: [
+              Image.asset('assets/images/request.png'),
+              const Text('Request',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/payPage');
+            },
+            child: Column(
+              children: [
+                Image.asset('assets/images/pay.png'),
+                const Text('Pay',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              Image.asset('assets/images/more.png'),
+              const Text('More', style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+          ),
+        ],
       ),
     );
   }

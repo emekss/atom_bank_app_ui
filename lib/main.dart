@@ -1,6 +1,10 @@
 import 'package:atom_bank_app_ui/pages/finance_page.dart';
 import 'package:atom_bank_app_ui/pages/home_page.dart';
 import 'package:atom_bank_app_ui/pages/logo_page.dart';
+import 'package:atom_bank_app_ui/pages/notification_page.dart';
+import 'package:atom_bank_app_ui/pages/pay_page.dart';
+import 'package:atom_bank_app_ui/pages/profile_page.dart';
+import 'package:atom_bank_app_ui/pages/send_money_page.dart';
 import 'package:atom_bank_app_ui/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +22,13 @@ class MyApp extends StatelessWidget {
       home: const LogoPage(),
       routes: {
         '/homePage': (context) => const HomePage(),
+        '/logoPage': (context) => const LogoPage(),
         '/financePage': (context) => const FinancePage(),
         '/walletPage': (context) => const WalletPage(),
-        '/profilePage': (context) => const FinancePage(),
+        '/profilePage': (context) => const ProfilePage(),
+        '/payPage': (context) => const PayPage(),
+        '/sendMoneyPage': (context) => const SendMoneyPage(),
+        '/notificationPage': (context) => const NotificationPage(),
       },
     );
   }

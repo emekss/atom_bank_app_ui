@@ -1,4 +1,3 @@
-import 'package:atom_bank_app_ui/components/bottom_navbar.dart';
 import 'package:atom_bank_app_ui/components/wallet_column.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +43,6 @@ class WalletPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

@@ -7,7 +7,7 @@ class ProductColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 398,
       child: ListView.builder(
           itemCount: product.length,
           itemBuilder: (context, index) {
