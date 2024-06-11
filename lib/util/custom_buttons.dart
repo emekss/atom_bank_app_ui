@@ -41,7 +41,8 @@ class _CustomButtonsState extends State<CustomButtons> {
               ),
             ],
           ),
-          Expanded(
+          SizedBox(
+            height: 80,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

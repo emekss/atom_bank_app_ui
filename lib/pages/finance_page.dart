@@ -14,23 +14,25 @@ class _FinancePageState extends State<FinancePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 14, 14, 14),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Image.asset(
-              'assets/images/backgroundimage.png',
-              width: MediaQuery.of(context).size.width,
-            ),
-            const Center(
-              child: Column(
-                children: [
-                  BalanceColumn(),
-                  SizedBox(height: 20),
-                  FinanceColumn(),
-                ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Image.asset(
+                'assets/images/backgroundimage.png',
+                width: MediaQuery.of(context).size.width,
               ),
-            ),
-          ],
+              const Center(
+                child: Column(
+                  children: [
+                    BalanceColumn(),
+                    SizedBox(height: 20),
+                    FinanceColumn(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

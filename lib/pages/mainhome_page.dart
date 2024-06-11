@@ -46,37 +46,39 @@ class _MainHomePageState extends State<MainHomePage> {
         ],
         backgroundColor: Colors.transparent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset(
-                  'assets/images/atmcard.png',
-                  height: 180,
-                ),
-                const CardAddButton()
-              ],
-            ),
-            const SizedBox(height: 15),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                LabelButton(),
-                SizedBox(height: 5),
-                Text(
-                  'Recent Transaction',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'assets/images/atmcard.png',
+                    height: 180,
                   ),
-                ),
-                ProductColumn()
-              ],
-            )
-          ],
+                  const CardAddButton()
+                ],
+              ),
+              const SizedBox(height: 15),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  LabelButton(),
+                  SizedBox(height: 5),
+                  Text(
+                    'Recent Transaction',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  ProductColumn()
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
