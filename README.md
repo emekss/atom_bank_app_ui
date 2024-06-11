@@ -36,7 +36,11 @@ To use and customize this UI for your Flutter project, follow these steps:
 
 ## App View
 
-https://github.com/emekss/atom_bank_app_ui/assets/110977719/c5584181-9df9-4881-b053-8e3fba16293a
+
+
+https://github.com/emekss/atom_bank_app_ui/assets/110977719/936e335e-f98e-4af5-b31b-15e11886ddc3
+
+
 
 ## Dependencies
 
